@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página desativada</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080d24;
+    --bg-2: #101a45;
+    --ink: #eaf0ff;
+    --muted: #8d9bc9;
+    --line: rgba(120, 150, 255, 0.22);
+    --signal: #5ce1ff;
+    --violet: #7f6bff;
+    --off: #ff6b8a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body {
+    font-family: "Sora", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(60% 50% at 50% 38%, rgba(127,107,255,.28), transparent 70%),
+      radial-gradient(40% 35% at 50% 40%, rgba(92,225,255,.14), transparent 70%),
+      linear-gradient(180deg, var(--bg-2), var(--bg));
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    overflow: hidden;
+    position: relative;
+  }
+  /* grade tecnológica */
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 56px 56px;
+    opacity: .35;
+    -webkit-mask-image: radial-gradient(circle at 50% 42%, #000 0%, transparent 68%);
+            mask-image: radial-gradient(circle at 50% 42%, #000 0%, transparent 68%);
+    pointer-events: none;
+  }
+  main {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 560px;
+    width: 100%;
+  }
+  .core {
+    width: 168px; height: 168px;
+    margin: 0 auto 40px;
+    position: relative;
+  }
+  .core svg { width: 100%; height: 100%; overflow: visible; }
+  .ring-outer { transform-origin: 50% 50%; animation: spin 40s linear infinite; }
+  .ring-inner { transform-origin: 50% 50%; animation: spin 24s linear infinite reverse; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .glow { filter: drop-shadow(0 0 10px rgba(92,225,255,.55)); }
+
+  .pill {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 8px 16px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(16, 26, 69, .6);
+    -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+    color: var(--muted);
+    font-size: .85rem;
+    margin-bottom: 24px;
+  }
+  .pill i {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--off);
+    box-shadow: 0 0 10px var(--off);
+  }
+  h1 {
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    background: linear-gradient(90deg, var(--ink) 30%, var(--signal));
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    margin-bottom: 16px;
+  }
+  p {
+    color: var(--muted);
+    font-weight: 300;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 44ch;
+    margin: 0 auto;
+  }
+  .pulse {
+    display: block;
+    width: min(320px, 80%);
+    height: 40px;
+    margin: 40px auto 0;
+  }
+  .pulse path { fill: none; stroke: var(--signal); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .pulse .trace {
+    stroke-dasharray: 420; stroke-dashoffset: 420;
+    animation: draw 2.4s ease-out .3s forwards;
+    filter: drop-shadow(0 0 4px rgba(92,225,255,.7));
+  }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ring-outer, .ring-inner { animation: none; }
+    .pulse .trace { animation: none; stroke-dashoffset: 0; }
+  }
+  @media (max-width: 480px) {
+    .core { width: 136px; height: 136px; margin-bottom: 32px; }
+  }
+</style>
+</head>
+<body>
+  <main>
+    <div class="core" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="96" stroke="rgba(120,150,255,.18)" stroke-width="1"/>
+        <g class="ring-outer">
+          <circle cx="100" cy="100" r="88" stroke="url(#g1)" stroke-width="2" stroke-dasharray="6 14" stroke-linecap="round"/>
+        </g>
+        <g class="ring-inner">
+          <circle cx="100" cy="100" r="68" stroke="rgba(127,107,255,.55)" stroke-width="1.5" stroke-dasharray="90 40 20 40"/>
+        </g>
+        <circle cx="100" cy="100" r="46" fill="rgba(16,26,69,.8)" stroke="rgba(92,225,255,.35)"/>
+        <g class="glow" stroke="#5ce1ff" stroke-width="5" stroke-linecap="round">
+          <path d="M100 76 V100"/>
+          <path d="M82 86 A26 26 0 1 0 118 86"/>
+        </g>
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#5ce1ff"/>
+            <stop offset="1" stop-color="#7f6bff"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <div class="pill"><i></i>Status: desativada</div>
+
+    <h1>Esta página foi desativada</h1>
+    <p>O conteúdo que você procura não está mais disponível. Obrigado pela compreensão.</p>
+
+    <svg class="pulse" viewBox="0 0 320 40" aria-hidden="true" preserveAspectRatio="none">
+      <path class="trace" d="M0 20 H90 L102 6 L116 34 L128 20 H140 L146 20 H320"/>
+    </svg>
+  </main>
+</body>
+</html>
